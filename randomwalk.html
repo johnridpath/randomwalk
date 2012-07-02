@@ -1,0 +1,35 @@
+<html>
+ <head>
+  <script type="application/javascript">
+function draw() {
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "red";
+
+  ctx.beginPath();
+  ctx.moveTo(500, 500);
+ctx.fillStyle = "red";
+  ctx.lineTo(300, 100);
+  ctx.lineTo(400, 100);
+  ctx.lineTo(500, 900);
+  ctx.lineTo(600, 400);
+  ctx.stroke();
+
+for (var i=0;i<6;i++){  
+      for (var j=0;j<6;j++){  
+        ctx.strokeStyle = 'rgb(0,' + Math.floor(255-42.5*i) + ',' +   
+                         Math.floor(255-42.5*j) + ')';  
+        ctx.beginPath();  
+        ctx.arc(12.5+j*25,12.5+i*25,10,0,Math.PI*2,true);  
+        ctx.stroke();  
+      }  
+    }
+
+}
+   </script>
+ </head>
+ <body onload="draw()">
+   <canvas id="canvas" width="1000" height="1000"></canvas>
+ </body>
+</html>
